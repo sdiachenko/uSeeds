@@ -25,12 +25,13 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import FooModule from './foo/foo.component';
 
 import './app.scss';
 
 angular.module('uSeedsApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
   uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-  socket, util
+  socket, util, FooModule
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
