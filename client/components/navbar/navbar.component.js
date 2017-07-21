@@ -7,7 +7,7 @@ export class NavbarComponent {
   menu = [{
     title: 'Home',
     state: 'main'
-  },{
+  }, {
     title: 'Foo',
     state: 'foo'
   }];
