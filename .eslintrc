@@ -114,8 +114,8 @@
         "no-delete-var": 2,                                         //disallow deletion of variables
         "no-label-var": 2,                                          //disallow labels that share a name with a variable
         "no-restricted-globals": 0,                                 //restrict usage of specified global variables
-        "no-shadow-restricted-names": 2,                            //disallow shadowing of names such as arguments
-        "no-shadow": [2, {"allow": ["err"]}],                       //disallow declaration of variables already declared in the outer scope
+        // "no-shadow-restricted-names": 2,                            //disallow shadowing of names such as arguments
+        // "no-shadow": [2, {"allow": ["err"]}],                       //disallow declaration of variables already declared in the outer scope
         "no-undef-init": 2,                                         //disallow use of undefined when initializing variables
         "no-undef": 2,                                              //disallow use of undeclared variables unless mentioned in a /*global */ block
         "no-undefined": 0,                                          //disallow use of undefined variable
@@ -239,7 +239,7 @@
         "no-useless-constructor": 2,                                //disallow unnecessary constructor
         "no-useless-rename": 2,                                     //disallow renaming import, export, and destructured assignments to the same name
         "no-var": 0,                                                //require let or const instead of var
-        "object-shorthand": 1,                                      //require method and property shorthand syntax for object literals
+        // "object-shorthand": 1,                                      //require method and property shorthand syntax for object literals
         "prefer-arrow-callback": 0,                                 //suggest using arrow functions as callbacks
         "prefer-const": 0,                                          //suggest using const declaration for variables that are never modified after declared
         "prefer-reflect": 1,                                        //suggest using Reflect methods where applicable

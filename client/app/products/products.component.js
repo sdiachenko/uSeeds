@@ -20,11 +20,11 @@ export class ProductViewCtrl {
     'ngInject';
     console.log('ProductViewCtrl', $stateParams.id);
     $scope.product = ProductFactory.get({id: $stateParams.id});
-    $scope.deleteProduct = function(){
+    $scope.deleteProduct = function() {
       ProductFactory.delete($scope.product);
       $state.go('products');
-    }
-  }  
+    };
+  }
 }
 
 export class ProductNewCtrl {
@@ -32,10 +32,10 @@ export class ProductNewCtrl {
   constructor($scope, $state, ProductFactory) {
     'ngInject';
     $scope.product = {}; // create a new instance
-    $scope.addProduct = function(product){
+    $scope.addProduct = function() {
       ProductFactory.create($scope.product);
       $state.go('products');
-    }
+    };
   }
 }
 
@@ -45,10 +45,10 @@ export class ProductEditCtrl {
     'ngInject';
     $scope.product = ProductFactory.get({id: $stateParams.id});
 
-    $scope.editProduct = function(product){
+    $scope.editProduct = function() {
       ProductFactory.update($scope.product);
       $state.go('products');
-    }
+    };
   }
 }
 

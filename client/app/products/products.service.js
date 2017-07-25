@@ -3,8 +3,8 @@ const angular = require('angular');
 
 /*@ngInject*/
 export function productsService() {
-  var last_id = 5;
-  var example_products = [
+  var lastId = 5;
+  var exampleProducts = [
     {_id: 1, title: 'Product 1', price: 123.45, quantity: 10, description: 'Lorem ipsum dolor sit amet'},
     {_id: 2, title: 'Product 2', price: 123.45, quantity: 10, description: 'Lorem ipsum dolor sit amet'},
     {_id: 3, title: 'Product 3', price: 123.45, quantity: 10, description: 'Lorem ipsum dolor sit amet'},
@@ -13,36 +13,36 @@ export function productsService() {
   ];
 
   return {
-    query: function(){
-      return example_products;
+    query: function() {
+      return exampleProducts;
     },
 
-    get: function(product){
+    get: function(params) {
       var result = {};
-      angular.forEach(example_products, function (product) {
-        console.log('product', this.product);
-        return this.product = product;
+      angular.forEach(exampleProducts, function(product) {
+        if(product._id == params.id) {
+          result.product = product;
+          return;
+        }
       }, result);
-      console.log('result.product', result.product);
       return result.product;
     },
 
-    delete: function(params){
-      angular.forEach(example_products, function (product, index) {
-        if(product._id == params._id){
-          console.log(product, index);
-          example_products.splice(index, 1);
+    delete: function(params) {
+      angular.forEach(exampleProducts, function(product, index) {
+        if(product._id == params._id) {
+          exampleProducts.splice(index, 1);
           return;
         }
       });
     },
 
-    create: function(product){
-      product.id = ++last_id;
-      example_products.push(product);
+    create: function(product) {
+      product.id = ++lastId;
+      exampleProducts.push(product);
     },
 
-    update: function(product){
+    update: function(product) {
       var item = this.get(product);
       if(!item) return false;
 
@@ -50,13 +50,12 @@ export function productsService() {
       item.price = product.price;
       item.quantity = product.quantity;
       item.description = product.description;
-      return true
+      return true;
     }
   };
 }
 
 // export default angular.module('uSeedsApp.products', [])
-//   .factory('ProductFactory', productsService)
-//   .name;
+//   .factory('ProductFactory', productsService);
 
 export default productsService;
