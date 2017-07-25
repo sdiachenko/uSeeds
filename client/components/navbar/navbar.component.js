@@ -10,6 +10,9 @@ export class NavbarComponent {
   }, {
     title: 'Foo',
     state: 'foo'
+  }, {
+    title: 'Products',
+    state: 'products'
   }];
   isLoggedIn: Function;
   isAdmin: Function;

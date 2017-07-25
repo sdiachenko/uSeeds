@@ -12,7 +12,6 @@ export class MainController {
   constructor($http, $scope, socket) {
     this.$http = $http;
     this.socket = socket;
-
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
